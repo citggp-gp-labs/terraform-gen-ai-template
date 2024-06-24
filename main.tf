@@ -53,3 +53,9 @@ module "big_query" {
   view_id      = "view_test"
   table_id     = "table_test"
 }
+
+module "service_account" {
+  source             = "./modules/service_account"  
+  project_id         = var.project_id
+  service_account_id = "teste-id"
+}
