@@ -45,3 +45,4 @@ terraform-plan
 - explicar quais parametros dentro dos módulos precisam ser preenchidos
 - revisar se é melhor separar pub/sub da cloud function, deixei tudo no mesmo módulo por enquanto
 - separar o código em diferentes ambientes
+- criar um for each para criação de mais buckets ou tabelas se necessário? ao invés dos módulos serem de apenas 1 recurso?
