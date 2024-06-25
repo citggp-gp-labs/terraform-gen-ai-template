@@ -36,10 +36,10 @@ project_id   = var.project_id        #id do projeto, deve ser passado via input
 ## Clonando o repositório e verificando se está tudo ok
 Ao clonar o repositório, validar com os seguintes comandos
 
-´´´sh
+```
 terraform-init
 terraform-plan
-´´´
+```
 
 Os paramêtros necessários de cada projeto, precisam ser preenchido no arquivo terraform.tfvars. 
 
@@ -50,6 +50,6 @@ env = Ambiente de desenvolvimento. No momento serve apenas como uma tag para con
 
 ## Criando os recursos
 
-´´´sh
+```
 terraform-apply
-´´´
+```
