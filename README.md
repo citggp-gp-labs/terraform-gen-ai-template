@@ -47,9 +47,9 @@ terraform-plan
 Os paramêtros necessários de cada projeto, precisam ser preenchido no arquivo terraform.tfvars. 
 
 ## Quais são os paramêtros?
-**project_id** = O ID do seu projeto.
-**region** = Em qual região os seus recursos deverão ser criados.
-**env** = Ambiente de desenvolvimento. No momento serve apenas como uma tag para controle se é um recurso produtivo ou se é apenas para testes. Futuramente será evoluído para workspaces.
+project_id = O ID do seu projeto.
+region = Em qual região os seus recursos deverão ser criados.
+env = Ambiente de desenvolvimento. No momento serve apenas como uma tag para controle se é um recurso produtivo ou se é apenas para testes. Futuramente será evoluído para workspaces.
 
 ## Criando os recursos
 
