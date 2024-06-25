@@ -7,11 +7,6 @@ variable "project_id" {
   type = string
 }
 
-variable "region" {
-  description = "value of project region"
-  type = string
-}
-
 variable "dataset_id" {
   description = "value of dataset id"
   type = string

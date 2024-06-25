@@ -2,7 +2,6 @@ resource "google_bigquery_table" "products" {
   dataset_id = var.dataset_id
   project    = var.project_id
   table_id   = var.table_id
-  location   = var.region
   time_partitioning {
     field = "created_at"
     type  = local.time_partitioning_type

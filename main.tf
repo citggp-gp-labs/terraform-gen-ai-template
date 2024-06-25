@@ -50,7 +50,6 @@ module "pub_sub_cloud_function" {
 module "big_query" {
   source       = "./modules/big_query"  
   project_id   = var.project_id
-  region       = var.region
   dataset_id   = "dataset_test"
   view_id      = "view_test"
   table_id     = "table_test"
