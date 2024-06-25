@@ -31,27 +31,30 @@ resource "google_project_service" "services" {
 # Instance only needed modules
 module "storage" {
   source       = "./modules/storage"  
-  location     = var.location
+  region       = var.region
   bucket_name  = "bucket_name"
   project_id   = var.project_id
+  env          = var.env
 }
 
 module "pub_sub_cloud_function" {
   source                = "./modules/pub_sub_cloud_functions"  
   project_id            = var.project_id
-  location              = var.location
+  region                = var.region
   service_account       = ""
   service_account_email = ""
   bucket_name           = module.storage.bucket_name
+  env                   = var.env
 }
 
 module "big_query" {
   source       = "./modules/big_query"  
   project_id   = var.project_id
-  location     = var.location
+  region       = var.region
   dataset_id   = "dataset_test"
   view_id      = "view_test"
   table_id     = "table_test"
+  env          = var.env
 }
 
 module "service_account" {

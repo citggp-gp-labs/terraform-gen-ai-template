@@ -7,7 +7,7 @@ variable "project_id" {
   type = string
 }
 
-variable "location" {
+variable "region" {
   description = "value of project region"
   type = string
 }
@@ -24,5 +24,10 @@ variable "table_id" {
 
 variable "view_id" {
   description = "value of table id"
+  type = string
+}
+
+variable "env" {
+  description = "application environment"
   type = string
 }

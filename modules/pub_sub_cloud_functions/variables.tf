@@ -3,7 +3,7 @@ variable "project_id" {
   type = string
 }
 
-variable "location" {
+variable "region" {
   description = "value of project region"
   type = string
 }
@@ -20,6 +20,11 @@ variable "service_account_email" {
 
 variable "bucket_name" {
   description = "Bucket name to be used, it will be used from other module"
+  type = string
+}
+
+variable "env" {
+  description = "application environment"
   type = string
 }
 
