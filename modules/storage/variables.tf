@@ -5,12 +5,10 @@ variable "project_id" {
 
 variable "location" {
   description = "value of project region"
-  default = "us-east4"
   type = string
 }
 
 variable "bucket_name" {
   description = "value of bucket name"
-  default = "test_bucket_name"
   type = string
 }

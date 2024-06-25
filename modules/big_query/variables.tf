@@ -9,7 +9,6 @@ variable "project_id" {
 
 variable "location" {
   description = "value of project region"
-  default = "us-east4"
   type = string
 }
 
