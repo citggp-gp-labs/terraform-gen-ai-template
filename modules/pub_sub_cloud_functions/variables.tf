@@ -13,11 +13,6 @@ variable "service_account" {
   type = string
 }
 
-variable "service_account_email" {
-  description = "value of service account email"
-  type = string
-}
-
 variable "bucket_name" {
   description = "Bucket name to be used, it will be used from other module"
   type = string

@@ -41,8 +41,7 @@ module "pub_sub_cloud_function" {
   source                = "./modules/pub_sub_cloud_functions"  
   project_id            = var.project_id
   region                = var.region
-  service_account       = ""
-  service_account_email = ""
+  service_account       = module.service_account.service_account
   bucket_name           = module.storage.bucket_name
   env                   = var.env
 }
