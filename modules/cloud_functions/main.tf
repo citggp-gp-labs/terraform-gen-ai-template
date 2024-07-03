@@ -5,7 +5,7 @@ resource "google_storage_bucket_object" "bucket_object" {
 }
 
 resource "google_cloudfunctions2_function" "model_evaluate_function" {
-  name        = "model_evaluate_function"
+  name        = var.clound_function_name
   location    = var.region
   description = "Function that will call the model for evaluation"
 
@@ -39,7 +39,7 @@ resource "google_cloudfunctions2_function" "model_evaluate_function" {
   event_trigger {
     trigger_region = var.region
     event_type     = "google.cloud.pubsub.topic.v1.messagePublished"
-    pubsub_topic   = google_pubsub_topic.ps_client_moderation_input_tst.name
+    pubsub_topic   = var.pub_sub_topic
     retry_policy   = "RETRY_POLICY_RETRY"
   }
 }

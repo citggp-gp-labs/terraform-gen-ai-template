@@ -23,10 +23,12 @@ variable "env" {
   type = string
 }
 
-locals {
-  input_function = "ps-client-moderation-input-tst"
-  output_function = "ps-client-moderation-output-tst"
-  message_retention_duration = "604800s"
-  ack_deadline_seconds = 10
-  ack_deadline_seconds_event_arc = 600
+variable "clound_function_name" {
+  description = "name of the cloud function to be implemented"
+  type = string
+}
+
+variable "pub_sub_topic" {
+  description = "topic that will trigger this cloud function"
+  type = string
 }

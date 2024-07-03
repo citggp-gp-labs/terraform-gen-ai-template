@@ -32,31 +32,43 @@ resource "google_project_service" "services" {
 module "storage" {
   source       = "./modules/storage"  
   region       = var.region
-  bucket_name  = "bucket_name"
+  bucket_name  = var.bucket_name
   project_id   = var.project_id
   env          = var.env
 }
 
-module "pub_sub_cloud_function" {
-  source                = "./modules/pub_sub_cloud_functions"  
+module "pub_sub" {
+  source                     = "./modules/pub_sub"  
+  project_id                 = var.project_id
+  env                        = var.env
+  ack_deadline_seconds       = 1
+  input_topic                = var.input_topic
+  output_topic               = var.output_topic
+  message_retention_duration = var.message_retention_duration
+}
+
+module "cloud_function" {
+  source                = "./modules/cloud_functions"  
   project_id            = var.project_id
   region                = var.region
   service_account       = module.service_account.service_account
   bucket_name           = module.storage.bucket_name
   env                   = var.env
+  clound_function_name  = var.cloud_function_name
+  pub_sub_topic         = module.pub_sub.input_topic
 }
 
 module "big_query" {
   source       = "./modules/big_query"  
   project_id   = var.project_id
-  dataset_id   = "dataset_test"
-  view_id      = "view_test"
-  table_id     = "table_test"
+  dataset_id   = var.dataset_id
+  view_id      = var.view_id
+  table_id     = var.table_id
   env          = var.env
 }
 
 module "service_account" {
   source             = "./modules/service_account"  
   project_id         = var.project_id
-  service_account_id = "teste-id"
+  service_account_id = var.service_account_id
 }
